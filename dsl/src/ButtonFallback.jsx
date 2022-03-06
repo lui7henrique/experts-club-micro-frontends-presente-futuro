@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  background: palevioletred;
+  background: Blue;
+  color: white;
   color: white;
   font-size: 2em;
   width: 100%;
@@ -13,12 +14,8 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = () => {
+const ButtonFallback = () => {
   const [counter, setCounter] = useState(0);
-
-  if (counter === 5) {
-    throw new Error("Count is 5. Error Occurred.");
-  }
 
   return (
     <StyledButton onClick={() => setCounter(counter + 1)}>
@@ -27,4 +24,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default ButtonFallback;

@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
+
 module.exports = {
   output: {
     publicPath: "http://localhost:8081/",
@@ -46,6 +47,7 @@ module.exports = {
       remotes: {},
       exposes: {
         "./Button": "./src/Button",
+        "./ButtonFallback": "./src/ButtonFallback",
       },
       shared: {
         ...deps,
